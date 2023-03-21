@@ -3,6 +3,11 @@
   padding: 25px;
 }
 
+.informContainer {
+  width: 312px;
+  margin: 0 auto;
+}
+
 .backlink {
   display: block;
   text-decoration: none;
@@ -29,25 +34,26 @@
   border: 5px solid rgba(242, 242, 247, 1);
   width: 150px;
   margin: 0 auto;
+  display: block;
 }
 
 .name {
-  font-size: 32px;
-  line-height: 1.19;
-  text-align: center;
   font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 32px;
-    line-height: 38px;
-    display: flex;
-    align-items: center;
-    text-align: center;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 1.18em;
+  text-align: center;
+  margin-top: 34px;
+  margin-bottom: 34px;
 }
 
 @media screen and (min-width: 1440px) {
   .name {
     font-size: 48px;
+    margin-top: 16px;
+    margin-bottom: 48px;
+    line-height: 1.18em;
   }
 }
 
@@ -56,4 +62,35 @@
   font-size: 20px;
   line-height: 1.2em;
   color: #8e8e93;
+  margin-bottom: 25px;
+}
+
+@media screen and (min-width: 1440px) {
+  .title {
+    margin-bottom: 48px;
+    text-align: center;
+  }
+}
+
+.characteristicsList {
+  list-style: none;
+  padding-left: 16px;
+}
+
+.characteristicsItem {
+  margin-bottom: 21px;
+}
+.characteristicsTitle {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.5em;
+  letter-spacing: 0.15px;
+  color: #081f32;
+}
+
+.characteristicsText {
+  font-size: 14px;
+  line-height: 1.2em;
+  letter-spacing: 0.25px;
+  color: #6e798c;
 }

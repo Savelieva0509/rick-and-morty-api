@@ -31,6 +31,7 @@ const CharacterDetails = () => {
 
   return (
     <div className={css.container}>
+      
       {character && (
         <div>
           <Link to={backLink} className={css.backlink}>
@@ -47,26 +48,30 @@ const CharacterDetails = () => {
             />
             <h2 className={css.name}> {character.name}</h2>
             <p className={css.title}>Informations</p>
-            <ul>
-              <li>
-                <p>Gender</p>
-                <p>{character.gender}</p>
+            <ul className={css.characteristicsList}>
+              <li className={css.characteristicsItem}>
+                <p className={css.characteristicsTitle}>Gender</p>
+                <p className={css.characteristicsText}>{character.gender}</p>
               </li>
-              <li>
-                <p>Status</p>
-                <p>{character.status}</p>
+              <li className={css.characteristicsItem}>
+                <p className={css.characteristicsTitle}>Status</p>
+                <p className={css.characteristicsText}>{character.status}</p>
               </li>
-              <li>
-                <p>Specie</p>
-                <p>{character.species}</p>
+              <li className={css.characteristicsItem}>
+                <p className={css.characteristicsTitle}>Specie</p>
+                <p className={css.characteristicsText}>{character.species}</p>
               </li>
-              <li>
-                <p>Origin</p>
-                <p>{character.origin.name}</p>
+              <li className={css.characteristicsItem}>
+                <p className={css.characteristicsTitle}>Origin</p>
+                <p className={css.characteristicsText}>
+                  {character.origin.name}
+                </p>
               </li>
-              <li>
-                <p>Type</p>
-                <p>{character?.type === '' ? 'Unkwown' : character?.type}</p>
+              <li className={css.characteristicsItem}>
+                <p className={css.characteristicsTitle}>Type</p>
+                <p className={css.characteristicsText}>
+                  {character?.type === '' ? 'Unkwown' : character?.type}
+                </p>
               </li>
             </ul>
           </div>
