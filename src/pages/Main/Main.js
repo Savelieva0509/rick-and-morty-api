@@ -7,6 +7,7 @@ import css from '../Main/Main.module.css';
 import { allCharacters } from '../../API';
 import Button from 'components/Button/Button';
 import logo from 'img/logo.png';
+import ScrollToTop from 'components/ScrollToTop/ScrollToTop';
 
 const Characters = () => {
   const [page, setPage] = useState(1);
@@ -57,7 +58,9 @@ const Characters = () => {
       <CharacterSearch onSubmit={onChange} name={query} />
       {isLoading && <Loader />}
       <CharacterList characters={filteredCharacters} />
+      <ScrollToTop/>
       <Button onLoadMore={loadMore} />
+     
       <Suspense fallback={<Loader center content="loading" />}>
         <Outlet />
       </Suspense>
