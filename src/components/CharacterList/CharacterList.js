@@ -16,7 +16,7 @@ const CharacterList = ({ characters }) => {
               state={{ from: location }}
               className={css.link}
             >
-              <img src={[image]} alt={name} className ={css.itemImage} />
+              <img src={[image]} alt={name} className={css.itemImage} />
               <div className={css.textContainer}>
                 <p className={css.name}>{name}</p>
                 <p className={css.species}>{species}</p>

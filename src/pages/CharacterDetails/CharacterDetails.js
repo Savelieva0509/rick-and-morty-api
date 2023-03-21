@@ -31,7 +31,6 @@ const CharacterDetails = () => {
 
   return (
     <div className={css.container}>
-      
       {character && (
         <div>
           <Link to={backLink} className={css.backlink}>

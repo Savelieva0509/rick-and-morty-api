@@ -1,13 +1,7 @@
-/* .form_container {
-  padding: 20px;
-} */
-
 .form {
   display: flex;
-  /* border: 1px solid red; */
   width: 100%;
   position: relative;
-  
 }
 
 .input {
@@ -40,20 +34,3 @@
     top: 30%;
   }
 }
-
-/* .button {
-  border: none;
-  cursor: pointer;
-  text-decoration: none;
-  display: inline-block;
-  color: white;
-  padding: 12px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  background-color: rgb(89, 89, 213);
-}
-
-.button:hover,
-.button:focus {
-  background-color: rgb(37, 37, 202);
-} */

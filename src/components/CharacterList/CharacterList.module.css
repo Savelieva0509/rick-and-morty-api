@@ -52,10 +52,8 @@ p {
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
-  line-height: 1.5;
-
+  line-height: 1.5em;
   letter-spacing: 0.15px;
-
   color: rgba(0, 0, 0, 0.87);
 }
 
@@ -64,10 +62,8 @@ p {
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
-  line-height: 1.5;
-
+  line-height: 1.5em;
   letter-spacing: 0.25px;
-
   color: rgba(0, 0, 0, 0.6);
 }
 
@@ -75,12 +71,4 @@ p {
   padding: 12px 16px;
 }
 
-/*   
-      @media screen and (min-width: 368px) {
-        height: 232px;
-      }
-  
-      @media screen and (min-width: 1440px) {
-        height: 168px;
-      }
-     */
+
