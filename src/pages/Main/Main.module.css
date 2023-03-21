@@ -1,0 +1,32 @@
+.container {
+  margin: 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 92px;
+  padding-bottom: 223px;
+}
+
+@media screen and (min-width: 1440px) {
+  .container {
+    padding-left: 210px;
+    padding-right: 210px;
+    padding-top: 86px;
+    padding-bottom: 188px;
+  }
+}
+
+.logo {
+  display: block;
+  margin-bottom: 16px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 312px;
+  height: 104px;
+}
+
+@media screen and (min-width: 1440px) {
+  .logo {
+    width: 600px;
+    height: 200px;
+  }
+}

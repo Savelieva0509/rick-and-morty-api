@@ -1,0 +1,88 @@
+p {
+  margin: 0;
+}
+
+
+
+.link {
+  text-decoration: none;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  justify-content: center;
+}
+
+.item {
+  background: #ffffff;
+
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2), 0px 3px 4px rgba(0, 0, 0, 0.12),
+    0px 2px 4px rgba(0, 0, 0, 0.14);
+
+  border-radius: 4px;
+  max-width: 312px;
+  margin: 0;
+
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media screen and (min-width: 1440px) {
+  .item {
+    width: calc((100% - 60px) / 4);
+  }
+}
+
+.item:hover {
+  transform: translateY(-5px);
+  box-shadow: 10px 10px 15px -2px rgb(152, 253, 131);
+}
+
+.itemImage {
+  display: block;
+  height: auto;
+  max-width: 100%;
+  width: 100%;
+}
+
+.name {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.5;
+
+  letter-spacing: 0.15px;
+
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.species {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.5;
+
+  letter-spacing: 0.25px;
+
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.textContainer {
+  padding: 12px 16px;
+}
+
+/*   
+      @media screen and (min-width: 368px) {
+        height: 232px;
+      }
+  
+      @media screen and (min-width: 1440px) {
+        height: 168px;
+      }
+     */
