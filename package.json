@@ -1,8 +1,8 @@
 {
-  "name": "rickandmortyapi",
+  "name": "rick-and-morty-api",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Savelieva0509.github.io/rickandmortyapi/",
+  "homepage": "https://Savelieva0509.github.io/rick-and-morty-api/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.3",
     "@testing-library/react": "^12.1.4",
