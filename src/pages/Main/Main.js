@@ -12,12 +12,27 @@ import ScrollToTop from 'components/ScrollToTop/ScrollToTop';
 const Characters = () => {
   const [page, setPage] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
-  const [query, setQuery] = useState(localStorage.getItem("query"));
+  const [query, setQuery] = useState(localStorage.getItem('query') || '');
   const [characters, setCharacters] = useState([]);
   const [setError] = useState(null);
-  const [filteredCharacters, setFilteredCharacters] = useState(characters);
-  
+  const [filteredCharacters, setFilteredCharacters] = useState([]);
+
   const sortCharacters = (a, b) => a.name.localeCompare(b.name);
+
+  const updateCharacters = response => {
+    const newCharacters = response.data.results.sort(sortCharacters);
+    setCharacters(prevCharacters => {
+      const uniqueCharacters = [
+        ...new Map(
+          [...prevCharacters, ...newCharacters].map(character => [
+            character.id,
+            character,
+          ])
+        ).values(),
+      ];
+      return uniqueCharacters;
+    });
+  };
 
   useEffect(() => {
     try {
@@ -25,9 +40,8 @@ const Characters = () => {
       allCharacters(page)
         .finally(() => setIsLoading(false))
         .then(response => {
-          setCharacters(response.data.results.sort(sortCharacters));
+          updateCharacters(response);
         });
-        
     } catch (error) {
       setError(error);
       setIsLoading(false);
@@ -35,13 +49,11 @@ const Characters = () => {
   }, [page, setError]);
 
   useEffect(() => {
-    if (characters) {
-      const filtered = characters.filter(character =>
-        character.name.toLowerCase().includes(query.toLowerCase())
-      );
-      setFilteredCharacters(filtered);
-      localStorage.setItem('query', query);
-    }
+    const filtered = characters.filter(character =>
+      character.name.toLowerCase().includes(query.toLowerCase())
+    );
+    setFilteredCharacters(filtered);
+    localStorage.setItem('query', query);
   }, [characters, query]);
 
   const onChange = e => {
@@ -49,7 +61,7 @@ const Characters = () => {
   };
 
   const loadMore = () => {
-    setPage(prevState => prevState + 1);
+    setPage(prevPage => prevPage + 1);
   };
 
   return (
@@ -58,9 +70,8 @@ const Characters = () => {
       <CharacterSearch onSubmit={onChange} name={query} />
       {isLoading && <Loader />}
       <CharacterList characters={filteredCharacters} />
-      <ScrollToTop/>
+      <ScrollToTop />
       <Button onLoadMore={loadMore} />
-     
       <Suspense fallback={<Loader center content="loading" />}>
         <Outlet />
       </Suspense>
